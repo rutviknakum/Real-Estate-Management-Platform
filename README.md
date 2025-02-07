@@ -52,10 +52,7 @@ nano .env  # Configure frontend environment variables
 npm start
 ```
 
-### Running with Docker (Optional)
-```sh
-docker-compose up --build
-```
+
 
 ---
 
