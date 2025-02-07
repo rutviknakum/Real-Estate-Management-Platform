@@ -56,21 +56,6 @@ npm start
 
 ---
 
-## 📌 API Endpoints
-
-### 🛡️ Authentication Routes
-- **POST** `/api/auth/register` - Register user
-- **POST** `/api/auth/login` - User login
-- **POST** `/api/auth/logout` - User logout
-
-### 🏡 Property Routes
-- **GET** `/api/properties` - Fetch all properties
-- **POST** `/api/properties` - Add a new property
-- **PUT** `/api/properties/:id` - Update a property
-- **DELETE** `/api/properties/:id` - Delete a property
-
----
-
 ## 🛠️ Technologies Used
 - **Frontend**: React.js (v18), Tailwind CSS
 - **Backend**: Go (v1.19+, Gin framework)
