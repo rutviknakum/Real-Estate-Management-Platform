@@ -7,12 +7,13 @@ import (
 	"os"
 	"time"
 
+	"api/config"
+	"api/models"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"golang.org/x/crypto/bcrypt"
 	"go.mongodb.org/mongo-driver/bson"
-"api/models"
-	"api/config"
+	"golang.org/x/crypto/bcrypt"
 )
 
 // Admin represents an admin user.
@@ -39,16 +40,16 @@ type AdminLoginInput struct {
 
 // JWTClaims defines the structure for JWT claims.
 
-	func generateAdminToken(userID string) (string, error) {
-		claims := models.JWTClaims{
-			ID: userID,
-			StandardClaims: jwt.StandardClaims{
-				ExpiresAt: time.Now().Add(24 * time.Hour).Unix(),
-			},
-		}
-		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-		return token.SignedString([]byte(os.Getenv("JWT_SECRET")))
+func generateAdminToken(userID string) (string, error) {
+	claims := models.JWTClaims{
+		ID: userID,
+		StandardClaims: jwt.StandardClaims{
+			ExpiresAt: time.Now().Add(24 * time.Hour).Unix(),
+		},
 	}
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	return token.SignedString([]byte(os.Getenv("JWT_SECRET")))
+}
 
 // AdminRegister registers a new admin.
 func AdminRegister(c *gin.Context) {
