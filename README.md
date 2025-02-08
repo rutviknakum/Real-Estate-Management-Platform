@@ -31,7 +31,7 @@ realestatego/
 Ensure the following are installed:
 - ✅ **Go** (1.19+)
 - ✅ **MongoDB** (Local or Cloud Atlas)
-- ✅ **Node.js** (v18+) & **npm**
+
 
 ### Backend Setup (Go)
 ```sh
@@ -61,7 +61,6 @@ npm start
 - **Backend**: Go (v1.19+, Gin framework)
 - **Database**: MongoDB (v6.0+)
 - **Authentication**: JWT-based authentication
-- **Containerization**: Docker & Docker-Compose (Optional)
 
 ---
 
